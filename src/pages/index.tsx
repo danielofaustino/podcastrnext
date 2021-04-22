@@ -14,7 +14,7 @@ type Episode = {
   id: string;
   title: string;
   thumbnail: string;
-  description: string;
+
   members: string;
   publishedAt: string;
   duration: number;
@@ -89,7 +89,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                     />
                   </td>
                   <td>
-                    <Link  href="">
+                    <Link href={`/episodes/${episode.id}`}>
                       <a>{episode.title}</a>
                     </Link>
                   </td>
@@ -133,7 +133,7 @@ export const getStaticProps: GetStaticProps = async () => {
       durationAsString: convertDurationToTimeString(
         Number(episode.file.duration)
       ),
-      description: episode.description,
+
       url: episode.file.url,
     };
   });
