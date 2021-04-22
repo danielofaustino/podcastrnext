@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-
+import { useRouter } from 'next/router'
 import { api } from '../../services/api';
 import Image from 'next/image';
 import { format, parseISO } from 'date-fns';
